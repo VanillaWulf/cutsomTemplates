@@ -1,0 +1,10 @@
+<div>
+  <ngx-datatable
+    [class]="templateClass"
+    [rows]="templateRows"
+    [columnMode]="'standart'"
+    >
+    <ngx-datatable-column *ngFor="let col of columns; let i = index" [name]="col.name" [prop]="col.prop" [width]="templateColumnWidth[i]">
+    </ngx-datatable-column>
+  </ngx-datatable>
+</div>
