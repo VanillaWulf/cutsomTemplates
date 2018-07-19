@@ -1,10 +1,45 @@
-<div>
+<div *ngIf="templateMode ==='standartMode'">
   <ngx-datatable
     [class]="templateClass"
     [rows]="templateRows"
     [columnMode]="'standart'"
     >
     <ngx-datatable-column *ngFor="let col of columns; let i = index" [name]="col.name" [prop]="col.prop" [width]="templateColumnWidth[i]">
+    </ngx-datatable-column>
+  </ngx-datatable>
+</div>
+
+<div *ngIf="templateMode ==='forceMode'" >
+  <ngx-datatable
+    [class]="templateClass"
+    [rows]="templateRows"
+    [columnMode]="'force'"
+  >
+    <ngx-datatable-column *ngFor="let col of columns" [name]="col.name" [prop]="col.prop">
+    </ngx-datatable-column>
+  </ngx-datatable>
+</div>
+
+<div *ngIf="templateMode ==='subHeader'" >
+  <ngx-datatable
+    [class]="templateClass"
+    [rows]="templateRows"
+    [columnMode]="'force'"
+    [groupRowsBy]="'customGroup'"
+    [groupExpansionDefault]="true">
+  >
+    <ngx-datatable-group-header [rowHeight]="50">
+      <ng-template let-group="group" ngx-datatable-group-header-template>
+        <div style="padding: 5px 5px 2px">
+          <p style="margin:0">{{group.value[0].customGroup}}</p>
+        </div>
+      </ng-template>
+    </ngx-datatable-group-header>
+
+   <ngx-datatable-column *ngFor="let col of columns" [name]="col.name" >
+      <ng-template let-row="row" ngx-datatable-cell-template>
+         <div> {{ row[col.prop]}}</div>
+      </ng-template>
     </ngx-datatable-column>
   </ngx-datatable>
 </div>

@@ -12,6 +12,7 @@ export class TableTemplateComponent implements OnInit {
   @Input() templateClass: string;
   @Input() templateColumnWidth: Array<number>;
   @Input() tempateRowLegend: Array<string>;
+  @Input() templateMode: string;
 
   columns = [];
 
@@ -23,6 +24,14 @@ export class TableTemplateComponent implements OnInit {
     this.columns = this.fromInputToPatternColumn(this.templateRows, this.templateColumns, this.tempateRowLegend);
     this.templateClass = this.checkStyleProperty(this.templateClass);
     this.templateColumnWidth = this.checkColumnWidthProperty(this.templateColumnWidth);
+    this.templateMode = this.checkMode(this.templateMode);
+  }
+
+  checkMode(templateMode){
+    if(!templateMode){
+      return 'forceMode';
+    }
+    return templateMode;
   }
 
   checkRowLegend(rows, legend){
@@ -37,7 +46,9 @@ export class TableTemplateComponent implements OnInit {
   }
 
   checkStyleProperty(customStyle: string): string {
-    if(!customStyle) { return 'bootstrap ngx-datatable';}
+    if(!customStyle) {
+      return 'bootstrap ngx-datatable';
+    }
       return customStyle + ' ngx-datatable';
   }
 
