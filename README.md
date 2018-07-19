@@ -1,27 +1,25 @@
-# TestTemplate
+# Table-template
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+##Input attributes
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+  TemplateRows: Array<object> : must have
+  An array with objects. Structure of object: {nameOfColumn1:'value of column1', nameOfColumn2:'value of column2'}
+  
+  TemplateColumns: Array<string> : must have
+  An array of strings. Structure: {'nameOfColumn1' , 'nameOfColumn2'}
+  
+  TemplateClass: string : mast have
+  Class of table. Use attribute without binding cause of string input. Default class - bootstrap.
+  
+  TemplateColumnWidth: Array<number> : optional
+  Custom width of column. Work in standartMode in templateMode. Default width 100px.
+  
+  TempateRowLegend: Array<string>;
+  Adding left row for legend. 
+  
+  TemplateMode: string;
+  standartMode - flexible configuration of column width. 
+  forceMode - the simpliest of using. Width of columns is calculated according parent container.
+  subHeader - apply to use subHeader by grouping rows. Ned to add group objest to row {customGroup: 'This is a group'}   
+   {nameOfColumn1:'value of column1', nameOfColumn2:'value of column2', customGroup: 'This is a group 1'},
+   {nameOfColumn1:'another value of column1', nameOfColumn2:'another of column2', customGroup: 'This is a group 2'}
