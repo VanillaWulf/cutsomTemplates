@@ -20,6 +20,6 @@
  - TemplateMode: string - optional.
    - standartMode - flexible configuration of column width. 
    - forceMode (default) - the simpliest of using. Width of columns is calculated according parent container.
-   - subHeader - apply to use subHeader by grouping rows. Ned to add group objest to row {customGroup: 'This is a group'}   
+   - subHeader - apply to use subHeader by grouping rows. Add group object to row {customGroup: 'This is a group'}   
     {nameOfColumn1:'value of column1', nameOfColumn2:'value of column2', customGroup: 'This is a group 1'},
     {nameOfColumn1:'another value of column1', nameOfColumn2:'another of column2', customGroup: 'This is a group 2'}
