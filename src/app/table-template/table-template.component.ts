@@ -70,10 +70,22 @@ export class TableTemplateComponent implements OnInit {
         if(inputRowLegend){
           inputColumns.unshift(' ');
         }
-        for (let i = 0; i < inputColumns.length; i++) {
-          returnPattern.push({name: inputColumns[i], prop: Object.keys(inputRows[i])[i]});
+        /*
+        for (let j = 0; j < inputRows.length; j++) {
+          for (let i = 0; i < Object.keys(inputRows[j]).length; i++) {
+            returnPattern.push({name: inputColumns[i], prop: Object.keys(inputRows[j])[i]});
+          }
+        }*/
+        let j = 0;
+        if (j < inputRows.length){
+          for (let i = 0; i < Object.keys(inputRows[j]).length; i++) {
+            if(Object.keys(inputRows[j])[i] != 'customGroup') {
+              returnPattern.push({name: inputColumns[i], prop: Object.keys(inputRows[j])[i]});
+            }
+          }
+        j++;
         }
-      }
+     }
       return returnPattern;
     }else {
        return;

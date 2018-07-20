@@ -9,11 +9,10 @@ import {Component, Injectable} from '@angular/core';
 export class AppComponent {
 
   rootTemplateRows = [
-    { name: 'Austin', gender: 'Male', company: 'Swimlane', status: 'a', customGroup: 'Группа a' },
-    { name: 'Dany', gender: 'Male', company: 'KFC', status: 'b', customGroup: 'Группа a'  },
-    { name: 'Molly', gender: 'Female', company: 'Burger King', status: 'b', customGroup: 'Группа б'  },
-    { name: 'Molly', gender: 'Male', company: 'Burger King', status: 'f', customGroup: 'Группа б'  },
-    { name: 'fff', gender: 'Male', company: 'Burger King', status: 'f', customGroup: 'Группа с'  },
+    { name: 'Austin'company: 'Swimlane', status: 'a', customGroup: 'Группа a' },
+    { name: 'Dany', company: 'KFC', status: 'b', customGroup: 'Группа a'  },
+    { name: 'Dany', company: 'KFC', status: 'b', customGroup: 'Группа в'  },
+    { name: 'Dany', company: 'KFC', status: 'b', customGroup: 'Группа в'  },
   ];
 
   rootTemplateColumns = ['Имя', 'Пол', 'Компания', 'Статус'];
