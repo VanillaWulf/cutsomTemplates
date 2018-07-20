@@ -13,6 +13,7 @@ export class TableTemplateComponent implements OnInit {
   @Input() templateColumnWidth: Array<number>;
   @Input() tempateRowLegend: Array<string>;
   @Input() templateMode: string;
+  @Input() templetePipeMode: string;
 
   columns = [];
 
@@ -25,9 +26,17 @@ export class TableTemplateComponent implements OnInit {
     this.templateClass = this.checkStyleProperty(this.templateClass);
     this.templateColumnWidth = this.checkColumnWidthProperty(this.templateColumnWidth);
     this.templateMode = this.checkMode(this.templateMode);
+    this.templetePipeMode= this.checkPipeMode(this.templetePipeMode);
   }
 
-  checkMode(templateMode){
+  checkPipeMode(mode): string {
+    if(!mode){
+      return 'no';
+    }
+    return mode;
+  }
+
+  checkMode(templateMode): string{
     if(!templateMode){
       return 'forceMode';
     }

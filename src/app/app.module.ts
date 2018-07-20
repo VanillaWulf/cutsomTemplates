@@ -19,6 +19,6 @@ import { MyCopmComponent } from './testroot/my-copm/my-copm.component';
     NgxDatatableModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

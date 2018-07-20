@@ -1,4 +1,5 @@
 import {Component, Injectable} from '@angular/core';
+import {CurrencyPipe} from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -8,22 +9,24 @@ import {Component, Injectable} from '@angular/core';
 
 export class AppComponent {
 
-  rootTemplateRows = [
-    { name: 'Austin'company: 'Swimlane', status: 'a', customGroup: 'Группа a' },
-    { name: 'Dany', company: 'KFC', status: 'b', customGroup: 'Группа a'  },
-    { name: 'Dany', company: 'KFC', status: 'b', customGroup: 'Группа в'  },
-    { name: 'Dany', company: 'KFC', status: 'b', customGroup: 'Группа в'  },
-  ];
+  public rootTemplateRows = [];
+  public rootTemplateColumns = [];
+  public rootColumnWidth = [];
+  public rootRowLegend = [];
 
-  rootTemplateColumns = ['Имя', 'Пол', 'Компания', 'Статус'];
+  constructor() {
+    this.rootTemplateRows = [
+      {name: 5000, company: 10000, status: 400, customGroup: 'Группа a'},
+      {name: 4000, company: 400000, status: 30000, customGroup: 'Группа a'},
+     ];
 
-  rootColumnWidth = [100, 300, 150, 200];
+    this.rootTemplateColumns = ['Имя', 'Компания', 'Статус'];
 
-  rootRowLegend = ['про остина',
-    'про дани',
-    'про бургер кинг',
-    'про бургер кинг',
-    'про бургер кинг'];
+    this.rootColumnWidth = [100, 300, 150, 200];
 
-  /*todo: clean hardcode declaration*/
+    this.rootRowLegend = ['про остина',
+      'про дани'];
+
+    /*todo: clean hardcode declaration*/
+  }
 }
