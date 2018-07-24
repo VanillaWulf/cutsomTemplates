@@ -27,6 +27,11 @@ export class TableTemplateComponent implements OnInit {
     this.templateColumnWidth = this.checkColumnWidthProperty(this.templateColumnWidth);
     this.templateMode = this.checkMode(this.templateMode);
     this.templetePipeMode= this.checkPipeMode(this.templetePipeMode);
+
+  }
+
+  isNumber(val) {
+    return typeof val === 'number';
   }
 
   checkPipeMode(mode): string {
@@ -56,7 +61,7 @@ export class TableTemplateComponent implements OnInit {
 
   checkStyleProperty(customStyle: string): string {
     if(!customStyle) {
-      return 'bootstrap ngx-datatable';
+      return 'table-template ngx-datatable';
     }
       return customStyle + ' ngx-datatable';
   }

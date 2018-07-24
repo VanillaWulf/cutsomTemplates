@@ -1,11 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="col-md-10">
+<div style="width: 30%;">
   <app-table-template
     [templateRows]="rootTemplateRows"
     [templateColumns]="rootTemplateColumns"
+    templateMode='forceMode'
+    templetePipeMode="allCurrency"
     [tempateRowLegend]="rootRowLegend"
-    templateMode='standartMode'
-    templetePipeMode="allNumbers"
   >
   </app-table-template>
 </div>

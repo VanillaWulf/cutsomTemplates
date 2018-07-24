@@ -6,8 +6,8 @@
     >
     <ngx-datatable-column *ngFor="let col of columns; let i = index" [name]="col.name" [width]="templateColumnWidth[i]">
       <ng-template let-row="row" ngx-datatable-cell-template>
-        <div *ngIf="templetePipeMode=='allNumbers'">{{ row[col.prop] | number: '1.2-2' }}</div>
-        <div> {{ row[col.prop]}}</div>
+        <div *ngIf="templetePipeMode=='allCurrency' && isNumber(row[col.prop]); else simpleRow"> {{ row[col.prop] | number: '1.2-2' }}</div>
+        <ng-template #simpleRow> {{ row[col.prop]}}</ng-template>
       </ng-template>
     </ngx-datatable-column>
   </ngx-datatable>
@@ -21,8 +21,8 @@
   >
     <ngx-datatable-column *ngFor="let col of columns" [name]="col.name">
       <ng-template let-row="row" ngx-datatable-cell-template>
-        <div *ngIf="templetePipeMode=='allNumbers'">{{ row[col.prop] | number: '1.2-2' }}</div>
-        <div> {{ row[col.prop]}}</div>
+        <div *ngIf="templetePipeMode=='allCurrency' && isNumber(row[col.prop]); else simpleRow"> {{ row[col.prop] | number: '1.2-2' }}</div>
+        <ng-template #simpleRow> {{ row[col.prop]}}</ng-template>
       </ng-template>
     </ngx-datatable-column>
   </ngx-datatable>
@@ -46,8 +46,8 @@
 
    <ngx-datatable-column *ngFor="let col of columns" [name]="col.name" >
       <ng-template let-row="row" ngx-datatable-cell-template>
-        <div *ngIf="templetePipeMode=='allNumbers'">{{ row[col.prop] | number: '1.2-2' }}</div>
-        <div> {{ row[col.prop]}}</div>
+        <div *ngIf="templetePipeMode=='allCurrency' && isNumber(row[col.prop]); else simpleRow"> {{ row[col.prop] | number: '1.2-2' }}</div>
+        <ng-template #simpleRow> {{ row[col.prop]}}</ng-template>
       </ng-template>
     </ngx-datatable-column>
   </ngx-datatable>
@@ -55,4 +55,3 @@
     <div> number</div>
   </ng-template>
 </div>
-
